@@ -1,0 +1,80 @@
+<div class="main-content">
+    <div class="container-fluid" *ngIf="usertype=='ADMIN'">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="chercher" (keyup)="chercher($event)">
+            </div>
+        </div>
+        <div class="row" >  
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Listes des Departements</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>Nom de departement</th>  
+                                    <th>description</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of listdepartement'>
+                                
+                                        <td>{{p.nomDepart}}</td>
+                                        <td>{{p.description}}</td>
+                                    
+                                   
+                                        <td><button  mat-raised-button class="btn btn-success" (click)="openDialog(p)"> 
+                                            <i class="material-icons" >edit</i></button> 
+                                      
+    
+                                <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="deletedepartement(p)"><i class="material-icons">delete</i></button>   
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+                            <button mat-raised-button class="btn btn-primary" (click)="affectationDialog()" > affecter </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="openform==false">
+            <button class="btn btn-info" (click)="openDialog(null)" >Ajouter</button>
+        </div>
+      
+    </div>
+    <div class="container-fluid" *ngIf="usertype=='ETUDIANT'">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="chercher" (keyup)="chercher($event)">
+            </div>
+        </div>
+
+        <div class="row" >  
+            <div class="col-md-3" *ngFor='let p of listdepartement' >
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> {{p.nomDepart}}</h4>
+                      
+                    </div>
+                    <div class="card-body" style=" background-color: white;">
+                        <p>{{p.description}}</p>
+                        <button  class="btn btn-pramiry"  (click)="infodep(p)">Info</button>
+                        <div *ngIf="chefdep!=null&&chefdep!='undefined'&&p.idDepart==chefdep.dep.idDepart">
+                            <p>{{chefdep.nomchefDepart}}</p>
+                                        <p>{{chefdep.prenomchefdepart}}</p>
+
+                        </div>
+                    </div>
+                  
+                </div>
+               
+            </div>
+        </div>
+  </div>
+  

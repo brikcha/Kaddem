@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <form  #f="ngForm">
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+
+                <h4 class="fw-bold py-3 mb-4">
+                    <span class="text-muted fw-light">{{btn}} /</span> Detail
+                </h4>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <h5 class="card-header">Detail</h5>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label  class="form-label">Salle</label>
+                                    <input
+                                            type="number"
+                                            name="salle"
+                                            class="form-control"
+                                            [(ngModel)]="detail.salle"
+                                            required
+                                            #n="ngModel"
+                                    >
+                                </div>
+                                <div class="alert alert-danger" *ngIf="n.invalid && n.touched">
+                                    <div *ngIf="n.hasError('required')">this field is required !</div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label  class="form-label">Thematique</label>
+                                    <input
+                                            type="text"
+                                            name="thematique"
+                                            class="form-control"
+                                            [(ngModel)]="detail.thematique"
+                                            required
+                                            #e="ngModel"
+                                            placeholder="Sport"
+                                    >
+                                </div>
+                                <div class="alert alert-danger" *ngIf="e.invalid && e.touched">
+                                    <div *ngIf="e.hasError('required')">this field is required !</div>
+                                </div>
+                                <br>
+                                <div  class="form-text">We'll never share your details with anyone else.</div>
+                                <br>
+                                <span *ngIf="f?.invalid && f?.touched" class="help-block">Please enter valid data !</span>
+                            </div>
+
+                        </div>
+                        <button class="btn btn-sm btn-primary" (click)="saveDetail()" [disabled]="f?.invalid">Submit</button>
+                        &nbsp;
+                        <button class="btn btn-sm btn-danger" (click)="Back()">cancel</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+
+
+    </div>
+</div>

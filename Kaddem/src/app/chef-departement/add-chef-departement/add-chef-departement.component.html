@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Etudiant</h1>
+<div mat-dialog-content>
+  <form [formGroup]="reactiveForm">
+    <mat-form-field>
+      <mat-label>Nom chef departement</mat-label>
+      <input
+        matInput
+        placeholder="Nom chef departement"
+        name="nomdepat"
+        required
+        minlength="3"
+        formControlName="nom"
+      />
+    </mat-form-field>
+    <div *ngIf="etatinput['nom'].invalid">
+      <div *ngIf="etatinput['nom'].errors?.['minlength']">minlength</div>
+      <div *ngIf="etatinput['nom'].errors?.['pattern']">pattern</div>
+    </div>
+
+    <mat-form-field>
+      <mat-label> Prenom chef departement</mat-label>
+      <input
+        matInput
+        placeholder="Prenom"
+        name="prenom"
+        formControlName="prenom"
+      />
+      <div *ngIf="etatinput['prenom'].invalid">
+        <!-- <div *ngIf="etatinput['nomE'].errors?.['required']">required</div> -->
+        <div *ngIf="etatinput['prenom'].errors?.['minlength']">minlength</div>
+        <div *ngIf="etatinput['prenom'].errors?.['pattern']">pattern</div>
+      </div>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button class="btn btn-secondary" mat-dialog-close>Fermer</button>
+  <button mat-button class="btn btn-primary" (click)="submit()">
+    {{ data ? "Modifier" : "Ajouter" }}
+  </button>
+</div>

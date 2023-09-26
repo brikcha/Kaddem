@@ -1,0 +1,106 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          
+
+          <div class="col-md-12">
+              <div class="card card-plain">
+                  <div class="card-header card-header-danger">
+                     
+                      
+
+                      <!-- Section: Design Block -->
+    <section class="background-radial-gradient overflow-hidden">
+
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+          <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+              <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                To Update University  <br />
+                <span style="color: hsl(311, 43%, 71%)">Please Fill In The Following Form</span>
+              </h1>
+          
+            </div>
+      
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+              <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+              <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+      
+              <div class="card bg-glass">
+                <div class="card-body px-4 py-5 px-md-5">
+                  <form [formGroup]="updateUniversite">
+                
+      
+                    <!-- University Name input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form3Example3" name="nomUniv" class="form-control" required minlength="4" pattern="[a-zA-Z]*"  
+                      uk-icon="icon: home" formControlName="nomUniv"/>
+                      <label class="form-label" for="form3Example3">University Name</label>
+                      <div class="alert alert-danger" *ngIf="updateUniversite.get('nomUniv').touched && updateUniversite.get('nomUniv').invalid"> Name required</div>
+
+                                  
+                    
+                    </div>
+                    
+                   
+
+
+                    <!-- Phone Number input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form3Example3" class="form-control" name="numTelUniv" required minlength="8" pattern="[0-9]*"  
+                      uk-icon="icon: receiver" formControlName="numTelUniv"/>
+                      <label class="form-label" for="form3Example3">Phone Number</label>
+                      <div class="alert alert-danger" *ngIf="updateUniversite.get('numTelUniv').touched && updateUniversite.get('numTelUniv').invalid"> Phone required</div>
+
+                      
+                    </div>
+
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input type="email" id="form3Example3" class="form-control" name="emailUniv"  required uk-icon="icon: mail" formControlName="emailUniv"/>
+                      <label class="form-label" for="form3Example3">Email address</label>
+                      <div class="alert alert-danger" *ngIf="updateUniversite.get('emailUniv').touched && updateUniversite.get('emailUniv').invalid"> Email required</div>
+
+                    </div>
+
+                    <!-- Adress input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form3Example3" class="form-control"   minlength="4" name="adresseUniv"  required uk-icon="icon: location" formControlName="adresseUniv"/>
+                      <label class="form-label" for="form3Example3"> Location </label>
+                      <div class="alert alert-danger" *ngIf="updateUniversite.get('adresseUniv').touched && updateUniversite.get('adresseUniv').invalid"> Adress required</div>
+
+                    </div>
+
+
+
+              
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4" value="save"  (click)="editUniv(updateUniversite.value,GetUniversityByID)">
+                      Update
+                    </button>
+      
+                    <!-- Back buttons -->
+
+                    <button type="submit" class="btn btn-primary "  [routerLink]="['/university/']" >
+                      Return
+                    </button>
+                  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+
+
+
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

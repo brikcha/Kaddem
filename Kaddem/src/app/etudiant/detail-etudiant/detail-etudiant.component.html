@@ -1,0 +1,72 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+       
+         
+
+            <!-- <form>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder=" Name" [(ngModel)]="etud.nomE"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="Prenom" [(ngModel)]="etud.prenomE"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <input disabled matInput >
+                <input
+                  type="file"
+                  (change)="handleProfilePictureInput($event.target.files)" formControlName="image">
+                <img id="importer" class="profile-picture" [src]="etud.image">
+            
+             
+                <br>
+                <button type="button" class="btn btn-success" (click)="addEtudiant(etud)">Add</button> 
+                <button type="button" class="btn btn-info">Cancel</button>
+            </form>
+                 -->
+
+
+
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Listes des one  Etudiants</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                   
+                                    <th>username</th>
+                                    <th>email</th>
+                                    <th>Option</th>
+                                    <th>Departement</th>
+                                    <!-- <th>Formation</th> -->
+                                  
+                                </thead>
+                                <tbody>
+                           
+                                     
+                                       
+                                        <td>{{etudiant.username}}</td>
+                                        <td>{{etudiant.email}}</td>
+                                        <td>{{etudiant.opt}}</td>
+                                        <td>{{etudiant.departement.nomDepart}} </td>
+                                        <!-- <td>{{etudiant.formation.formation}}</td>
+                                     -->
+                                  
+                                </tbody>
+
+                               
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

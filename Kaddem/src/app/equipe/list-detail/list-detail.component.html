@@ -1,0 +1,38 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <form class="col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        autocomplete="off"
+        placeholder="Search"
+      />
+    </form>
+    <br />
+    <h1>Details : ({{ detailsList.length }})</h1>
+    <div class="row">
+      <h3 *ngIf="detailsList.length === 0">no elements found !</h3>
+      <div
+        class="col-md-6 col-lg-4 mb-3"
+        *ngFor="
+          let d of detailsList | slice : (page - 1) * pageSize : page * pageSize
+        "
+      >
+        <app-detail [detail]="d" (notification)="deleteDetails($event)">
+        </app-detail>
+      </div>
+    </div>
+  </div>
+  <div class="row g-0 align-items-center pb-4">
+    <div class="col-sm-6">
+      <div>
+        <p class="mb-sm-0">
+          Showing {{ page * pageSize - (pageSize - 1) }} to
+          {{ page * pageSize }} of {{ length }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

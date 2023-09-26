@@ -1,0 +1,145 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Filter -->
+
+      <div class="input-group rounded">
+        <input
+          type="text"
+          class="form-control rounded"
+          placeholder="      Looking For University ?"
+          aria-label="Search"
+          aria-describedby="search-addon"
+          [(ngModel)]="universityFilter"
+          (ngModelChange)="filterUniversity(universityFilter)"
+        />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+
+      <br />
+
+      <br />
+
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title mt-0">List of Universities</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead class="">
+                  <th>Name</th>
+                  <th>Adress</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Departements</th>
+                  <th>Events</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let Univ of listUniversities; let i = index">
+                    <td>{{ Univ.nomUniv }}</td>
+                    <td>{{ Univ.adresseUniv }}</td>
+                    <td>{{ Univ.emailUniv }}</td>
+                    <td>{{ Univ.numTelUniv }}</td>
+                    <td>
+                      <div class="btn-group">
+                        <button
+                          type="button"
+                          class="btn btn-info dropdown-toggle"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          (click)="this.getAllDepartements(Univ.idUniv)"
+                        >
+                          Afficher
+                        </button>
+                        <div class="dropdown-menu">
+                          <a *ngFor="let dep of departementList">{{
+                            dep.nomDepart
+                          }}</a>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td>
+                      <div class="btn-group">
+                        <button
+                          type="button"
+                          class="btn btn-info dropdown-toggle"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          (click)="this.getAllEvents(Univ.idUniv)"
+                        >
+                          Afficher
+                        </button>
+                        <div class="dropdown-menu">
+                          <a *ngFor="let event of eventList">
+                            <td>{{ event.nomEvent }}</td></a
+                          >
+                        </div>
+                      </div>
+                    </td>
+
+                    <td>
+                      <button
+                        type="button"
+                        mat-raised-button
+                        class="btn btn-primary"
+                        *ngIf="userRole == 'ROLE_ADMIN'"
+                        routerLink="edit/{{ Univ.idUniv }}"
+                      >
+                        <i class="material-icons">edit</i>
+                      </button>
+
+                      <button
+                        type="button"
+                        mat-raised-button
+                        rel="tooltip"
+                        *ngIf="userRole == 'ROLE_ADMIN'"
+                        class="btn btn-danger"
+                        (click)="deleteUniv(Univ.idUniv, i)"
+                      >
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="btn btn-primary"
+    [routerLink]="['add']"
+    *ngIf="userRole == 'ROLE_ADMIN'"
+  >
+    Add
+  </button>
+
+  <!-- <tr *ngIf="userRole == 'ROLE_ADMIN'">
+    <input
+      type="text"
+      name="affectUniv"
+      placeholder=" Id University"
+      pattern="[1-9]*"
+      [(ngModel)]="affectUnivv"
+    />
+    <input
+      type="text"
+      name="affectDept"
+      placeholder=" Id Departement"
+      pattern="[1-9]*"
+      [(ngModel)]="affectDept"
+    />
+
+    <button type="button" class="btn btn-warning">Affection Univ/Dept</button>
+  </tr> -->
+</div>

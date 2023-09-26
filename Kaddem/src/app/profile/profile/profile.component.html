@@ -1,0 +1,171 @@
+
+<div class="container">
+  <div class="main-body">
+  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      
+        <!-- /Breadcrumb -->
+  
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                  <div class="mt-3">
+                    <h4>USER PROFILE</h4>
+                    <p class="text-secondary mb-1">{{ currentUser.username }}</p>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+         
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ currentUser.username }}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ currentUser.email }}                  </div>
+                </div>
+                <hr>
+               
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Role</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary" *ngFor="let role of currentUser.roles">
+                  
+                    {{ role }}          </div>
+                  </div>
+                      
+                
+                 
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+   
+
+<!--
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+<div class="row">
+  <div class="profile-nav col-md-3">
+      <div class="panel">
+          <div class="user-heading round">
+              <a href="#">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+              </a>
+              <h1>Camila Smith</h1>
+              <p>deydey@theEmail.com</p>
+          </div>
+
+          <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a>
+                
+              <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li>
+      </ul>
+      </div>
+  </div>
+  <div class="profile-info col-md-9">
+      <div class="panel">
+         
+      </div>
+      <div class="panel">
+          <div class="bio-graph-heading">
+              my biography intro 
+          </div>
+          <div class="panel-body bio-graph-info">
+              <h1>Bio Graph</h1>
+              <div class="row">
+                  <div class="bio-row">
+                      <p><span>First Name </span>: Camila</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Last Name </span>: Smith</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Country </span>: Australia</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Birthday</span>: 13 July 1983</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Occupation </span>: UI Designer</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Email </span>: jsmith@flatlab.com</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Mobile </span>: (12) 03 4567890</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Phone </span>: 88 (02) 123456</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div>
+          
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          
+
+
+
+
+
+
+
+
+-->
+
+<!--
+  <header class="jumbotron">
+    <h3>
+      <strong>{{ currentUser.username }}</strong> Profile
+    </h3>
+  </header>
+  
+  <p>
+    <strong>Email:</strong>
+    {{ currentUser.email }}
+  </p>
+  <strong>Roles:</strong>
+  <ul>
+    <li *ngFor="let role of currentUser.roles">
+      {{ role }}
+    </li>
+  </ul>
+</div>
+-->
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

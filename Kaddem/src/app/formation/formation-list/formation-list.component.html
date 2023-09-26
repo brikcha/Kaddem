@@ -1,0 +1,97 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- <form class="navbar-form">
+                            <div class="input-group no-border">
+                                <td colspan="2" style="text-align: right"></td>
+                                <input style="width:15px;margin-bottom:0px" type="text" [(ngModel)]="searchvalue" (input)="onsearch()"
+                                    class="form-control" placeholder="Search... " x>
+
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+
+                            </div>
+                        </form> -->
+
+
+                <button mat-raised-button class="btn btn-success" *ngIf="userRole == 'ROLE_ADMIN'" (click)="openDialog(null)">
+                    Ajouter
+                </button>
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des Formations </h4>
+                    
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    
+                                    <th [ngClass]="[classename1,classename2]">
+                                        nom de formation
+                                    </th>
+                                
+                                     
+                                    <th [ngClass]="[classename1,classename2]">
+                                        Sujet
+                                    </th>
+                                    <th [ngClass]="[classename1,classename2]">
+                                        Lieu
+                                    </th>
+                                    <th [ngClass]="[classename1,classename2]">
+                                        Date début
+                                    </th>
+                                   
+                                    <th [ngClass]="[classename1,classename2]">
+                                        Date fin
+                                    </th>
+
+                                   
+                                   
+                                    <th [ngClass]="'three'">
+                                        Actions
+                                    </th>
+
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let formation of listeFormation'>
+                                       <div [routerLink]="['/home/formation/details/',formation.idformation]"> 
+                                        <td>{{formation.nomFomrmation}}</td>
+                                    </div> 
+                                        <td>{{formation.sujet}}</td>
+                                
+                                        <td>{{formation.lieu}}</td>
+                                        <td>{{formation.datedebut | date}}</td>
+                                        <td>{{formation.datefin | date}}</td>
+                                        <!-- <td>{{etudiant.departement.nomDepart}}</td> -->
+                                   
+                                        <td><button mat-raised-button (click)="openDialog(formation)"  *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-primary">
+                                               <i class="material-icons">edit</i>
+                                        </button></td>
+
+                                     
+                                        <button mat-raised-button rel="tooltip"  *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-danger"
+                                        (click)="deleteEtudiant(formation.idformation)">
+                                        <i   class="material-icons">delete</i></button>
+
+                                       
+                             <!-- <app-formation-add (GreenEvent)="addItem($event)"></app-formation-add>  -->
+
+                
+                                </tbody>
+                            </table>
+                             
+                             
+                            <!-- <button mat-raised-button rel="tooltip" class="btn btn-danger"
+                            (click)="Trierr()">Triee</button> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

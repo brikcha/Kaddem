@@ -1,0 +1,208 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header card-header-danger">
+            <!-- Section: Design Block -->
+            <section class="background-radial-gradient overflow-hidden">
+              <div
+                class="container px-4 py-5 px-md-5 text-center text-lg-start my-5"
+              >
+                <div class="row gx-lg-5 align-items-center mb-5">
+                  <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <h1
+                      class="my-5 display-5 fw-bold ls-tight"
+                      style="color: hsl(218, 81%, 95%)"
+                    >
+                      To Add Event 
+                    </h1>
+                    <br />
+                      <span style="color: hsl(311, 43%, 71%)"
+                        >Please Fill In The Following Form</span
+                      >
+                  </div>
+
+                  <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div
+                      id="radius-shape-1"
+                      class="position-absolute rounded-circle shadow-5-strong"
+                    ></div>
+                    <div
+                      id="radius-shape-2"
+                      class="position-absolute shadow-5-strong"
+                    ></div>
+
+                    <div class="card bg-glass">
+                      <div class="card-body px-4 py-5 px-md-5">
+                        <form [formGroup]="formBui">
+                          <!-- Event Name input -->
+                          <div class="form-outline mb-4">
+                            <input
+                              type="text"
+                              id="form3Example3"
+                              name="nomEvent"
+                              class="form-control"
+                              required
+                              minlength="4"
+                              pattern="[a-zA-Z]*"
+                              formControlName="nomEvent"
+                              uk-icon="icon: home"
+                            />
+                            <label class="form-label" for="form3Example3"
+                              >Event Name</label
+                            >
+                            <div
+                              class="alert alert-danger"
+                              *ngIf="
+                                formBui.get('nomEvent').touched &&
+                                formBui.get('nomEvent').invalid
+                              "
+                            >
+                              Name required
+                            </div>
+                          </div>
+
+                          <!-- Type input -->
+                          <select
+                            name="type"
+                            class="form-control"
+                            formControlName="type"
+                          >
+                            <option class="tab-pane active">SEMINAIRE</option>
+                            <option class="tab-pane active">ATELIER</option>
+                            <option class="tab-pane active">TEDTALK</option>
+                            <option class="tab-pane active">
+                              VISITEGUIDEE
+                            </option>
+                          </select>
+
+                          <label>Type</label>
+
+                          <!-- Description input -->
+                          <div class="form-outline mb-4">
+                            <input
+                              type="text"
+                              id="form3Example3"
+                              class="form-control"
+                              name="description"
+                              required
+                              minlength="8"
+                              formControlName="description"
+                              uk-icon="icon: receiver"
+                            />
+                            <label class="form-label" for="form3Example3">
+                              Description
+                            </label>
+                            <div
+                              class="alert alert-danger"
+                              *ngIf="
+                                formBui.get('description').touched &&
+                                formBui.get('description').invalid
+                              "
+                            >
+                              Description required
+                            </div>
+                          </div>
+
+                          <!-- Location input -->
+                          <div class="form-outline mb-4">
+                            <input
+                              type="text"
+                              id="form3Example3"
+                              class="form-control"
+                              name="location"
+                              formControlName="location"
+                              required
+                              uk-icon="icon: mail"
+                            />
+                            <label class="form-label" for="form3Example3"
+                              >Location</label
+                            >
+                            <div
+                              class="alert alert-danger"
+                              *ngIf="
+                                formBui.get('location').touched &&
+                                formBui.get('location').invalid
+                              "
+                            >
+                              Location required
+                            </div>
+                          </div>
+
+                          <!-- Date input -->
+                          <div class="form-outline mb-4">
+                            <input
+                              type="date"
+                              id="form3Example3"
+                              class="form-control"
+                              name="dateEvent"
+                              formControlName="dateEvent"
+                              required
+                              uk-icon="icon: location"
+                            />
+                            <label class="form-label" for="form3Example3">
+                              Date
+                            </label>
+                            <div
+                              class="alert alert-danger"
+                              *ngIf="
+                                formBui.get('dateEvent').touched &&
+                                formBui.get('dateEvent').invalid
+                              "
+                            >
+                              Date required
+                            </div>
+                          </div>
+
+                          <select
+                            name="universite"
+                            formControlName="universite"
+                            class="browser-default custom-select"
+                          >
+                            <option
+                              *ngFor="let b of universites"
+                              [value]="b.idUniv"
+                            >
+                              {{ b.nomUniv }}
+                            </option>
+                          </select>
+                          <br />
+                          <label class="form-label" for="form3Example3">
+                            University
+                          </label>
+
+                          <!-- Submit button -->
+                          <button
+                            type="submit"
+                            class="btn btn-primary btn-block mb-4"
+                            value="save"
+                            (click)="Affect()"
+                          >
+                            Add
+                          </button>
+
+                          <!-- Back buttons -->
+
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            [routerLink]="['/home/events/']"
+                          >
+                            Return
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Section: Design Block -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

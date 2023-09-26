@@ -1,0 +1,141 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            
+
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                       
+                        
+
+                        <!-- Section: Design Block -->
+      <section class="background-radial-gradient overflow-hidden">
+
+          <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+              <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                  To Add University  <br />
+                  <span style="color: hsl(311, 43%, 71%)">Please Fill In The Following Form</span>
+                </h1>
+            
+              </div>
+        
+              <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+        
+                <div class="card bg-glass">
+                  <div class="card-body px-4 py-5 px-md-5">
+                    <form #f="ngForm">
+                  
+        
+                      <!-- University Name input -->
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example3" name="nomUniv" class="form-control" required minlength="4" pattern="[a-zA-Z]*" [ngModel]  #nomUniv="ngModel" 
+                        uk-icon="icon: home"/>
+                        <label class="form-label" for="form3Example3">University Name</label>
+                        <div *ngIf="nomUniv.invalid && nomUniv.touched" >
+                          <div *ngIf="nomUniv.errors?.['required']" >
+                                    required</div>
+                                    
+                                    <div *ngIf="nomUniv.errors?.['minlength']" >
+                                    minlength
+                                    </div>
+                                    
+                                    
+                                    <div *ngIf="nomUniv.errors?.['pattern']" >
+                                    pattern
+                                    </div>
+                                    
+                      
+                      </div>
+                    </div>
+                      
+                     
+
+
+                      <!-- Phone Number input -->
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example3" class="form-control" name="numTelUniv" required minlength="8" pattern="[0-9]*"  [ngModel]  #numTelUniv="ngModel"
+                        uk-icon="icon: receiver"/>
+                        <label class="form-label" for="form3Example3">Phone Number</label>
+
+                        <div *ngIf="numTelUniv.invalid && numTelUniv.touched" >
+                          <div *ngIf="numTelUniv.errors?.['required']" >
+                                    required</div>
+                                    
+                                    <div *ngIf="numTelUniv.errors?.['minlength']" >
+                                    minlength
+                                    </div>
+                                    
+                                    
+                                    <div *ngIf="numTelUniv.errors?.['pattern']" >
+                                    pattern
+                                    </div>
+                                    
+                      
+                      </div>
+                      </div>
+
+
+                      <!-- Email input -->
+                      <div class="form-outline mb-4">
+                        <input type="email" id="form3Example3" class="form-control" name="emailUniv" [ngModel]  #emailUniv="ngModel" required uk-icon="icon: mail"/>
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        <div *ngIf="emailUniv.invalid && emailUniv.touched" >
+                          <div *ngIf="emailUniv.errors?.['required']" >
+                                    required</div>
+                        
+                      </div>
+
+                      </div>
+
+                      <!-- Adress input -->
+                      <div class="form-outline mb-4">
+                        <input type="text" id="form3Example3" class="form-control"   minlength="4" name="adresseUniv" [ngModel]  #adresseUniv="ngModel" required uk-icon="icon: location"/>
+                        <label class="form-label" for="form3Example3"> Location </label>
+                        <div *ngIf="adresseUniv.invalid && adresseUniv.touched" >
+                          <div *ngIf="adresseUniv.errors?.['required']" >
+                                    required</div>
+                                    
+                                    <div *ngIf="adresseUniv.errors?.['minlength']" >
+                                    minlength
+                                    </div>
+                        
+                      </div>
+                    </div>
+
+                    
+                
+                      <!-- Submit button -->
+                      <button type="submit" class="btn btn-primary btn-block mb-4" value="save" [disabled]="f.invalid" (click)="addUniv(f.value)" >
+                        Add 
+                      </button>
+        
+                      <!-- Back buttons -->
+
+                      <button type="submit" class="btn btn-primary "  [routerLink]="['/home/university']">
+                        Return
+                      </button>
+                    
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

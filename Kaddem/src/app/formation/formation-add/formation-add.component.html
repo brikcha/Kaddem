@@ -1,0 +1,119 @@
+<h1 mat-dialog-title>Etudiant</h1>
+<div mat-dialog-content>
+    <form #f="ngForm">
+        <div class="container">
+
+            <label> nom </label>
+            <br>
+            <input name="nomFormation" required minlength="3" pattern="[a-zA-Z]*" [(ngModel)]="Forma.nomFomrmation"
+                #nomFormation="ngModel" />
+            <div *ngIf="nomFormation.invalid && nomFormation.touched">
+               <app-errors [validator]="nomFormation"></app-errors>
+                <!-- <div *ngIf="nomFormation.errors?.['required']">
+                    required</div>
+
+                <div *ngIf="nomFormation.errors?.['minlength']">
+                    minlength
+                </div>
+
+                <div *ngIf="nomFormation.errors?.['pattern']">
+                    pattern
+                </div> -->
+
+
+            </div>
+
+            <br>
+            <label>Lieu</label>
+            <br>
+
+
+            <div class="col-sm-4">
+
+
+                <input matInput name="lieu" required minlength="3" pattern="[a-zA-Z]*" [(ngModel)]="Forma.lieu"
+                    #lieu="ngModel" />
+                <span class="form-control-feedback">
+                    <i class="material-icons">done</i>
+                </span>
+            </div>
+            <br>
+
+            <label>Date debut</label>
+            <br>
+
+
+            <div class="col-sm-4">
+
+
+                <input matInput type="date" name="datedebut" required minlength="3" pattern="[a-zA-Z]*"
+                    [(ngModel)]="Forma.datedebut" #datedebut="ngModel" />
+                <span class="form-control-feedback">
+                    <i class="material-icons">done</i>
+                </span>
+            </div>
+
+            <br>
+
+            <label>Date Fin</label>
+            <br>
+
+
+            <div class="col-sm-4">
+
+
+                <input matInput type="date" name="datefin" required minlength="3" pattern="[a-zA-Z]*"
+                    [(ngModel)]="Forma.datefin" #datefin="ngModel" />
+                <span class="form-control-feedback">
+                    <i class="material-icons">done</i>
+                </span>
+            </div>
+
+            <br>
+
+            <label>sujet</label>
+            <br>
+
+
+            <div class="col-sm-4">
+
+
+                <input matInput type="text" name="sujet" required minlength="3" pattern="[a-zA-Z]*"
+                    [(ngModel)]="Forma.sujet" #sujet="ngModel" />
+                <span class="form-control-feedback">
+                    <i class="material-icons">done</i>
+                </span>
+            </div>
+
+            <br>
+
+
+            <label>Description</label>
+            <br>
+
+
+            <div class="col-sm-4">
+
+
+                <textarea matInput name="description" required minlength="3" pattern="[a-zA-Z]*"
+                    [(ngModel)]="Forma.description" #description="ngModel"></textarea>
+                <span class="form-control-feedback">
+                    <i class="material-icons">done</i>
+                </span>
+            </div>
+
+            <br>
+
+
+        </div>
+    </form>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-button class="btn btn-secondary" mat-dialog-close>Fermer</button>
+    <button mat-button class="btn btn-primary"  (click)="submit()">{{data ? 'Modifier': 'Ajouter'}} </button>
+
+<!-- 
+<button mat-button class="btn btn-primary" (click)="callParent()"></button> -->
+
+</div>

@@ -1,0 +1,93 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+                
+
+
+    <!-- Filter -->
+
+            <div class="input-group rounded" >
+                <input type="text" class="form-control rounded" placeholder="Looking For a particular type of event ? enter the desired type" aria-label="Search" aria-describedby="search-addon" 
+                [(ngModel)]="searchvalue" (ngModelChange)="onsearch()"/>
+                <br>
+               
+              </div>
+              <br>
+              <br>
+
+              <span class="input-group-text border-0" id="search-addon" [ngClass]="{changeBackground : (searchvalue != null && searchvalue != '') }">
+                The type of event you're searching for is : {{searchvalue}} 
+              </span>
+              <br>
+              <br>
+
+
+            
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> List of Events</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    
+                                    <th> Name</th>
+                                    <th> Type</th>
+                                    <th> Description</th>
+                                    <th> Location</th>
+                                    <th> Date</th>
+
+                                </thead>
+                                <tbody>
+                                    
+                                    
+                                    <tr *ngFor='let event of ListEvents ; let i = index '>
+                                
+                                        <td>{{event.nomEvent}}</td>
+                                        <td [ngStyle]="{color: getColor(event.type) }"><strong>{{event.type}}</strong></td>
+                                        <td>{{event.description}}</td>
+                                        <td>{{event.location}}</td>
+                                        <td>{{event.dateEvent}}</td>
+
+
+                                       
+                                   
+                                        <td>
+                                            <button type="button" mat-raised-button *ngIf="userRole == 'ROLE_ADMIN'" class="btn btn-primary" routerLink="/home/events/edit/{{event.idEvent}}"  > 
+                                            <i class="material-icons"  >edit</i>
+                                            </button>  
+
+
+                                            <button type="button" mat-raised-button *ngIf="userRole == 'ROLE_ADMIN'"  rel="tooltip"  class="btn btn-danger" (click)="deleteEvent(event.idEvent,i)" >
+                                                <i class="material-icons">delete</i>
+                                            </button> 
+
+                                        </td>
+                                                
+                                                  
+                                   
+                                    
+                                    </tr>
+                                  
+                                
+                                           
+    
+                                    
+                                   
+                                   
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <button type="button" class="btn btn-primary"  routerLink="add" *ngIf="userRole == 'ROLE_ADMIN'">Ajouter</button> 
+
+  </div>
+  

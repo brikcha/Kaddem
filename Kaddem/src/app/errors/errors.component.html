@@ -1,0 +1,9 @@
+
+<div *ngIf="validator.invalid">
+   <div *ngIf="validator.errors?.['required']">
+   required
+   </div>
+   <div *ngIf="validator.errors?.['minlength']">
+       minlength
+       </div>
+   </div>

@@ -1,0 +1,28 @@
+
+<mat-dialog-content class="mat-typography">
+    <form>
+        <mat-form-field>
+          <mat-label>Date debut</mat-label>
+          <input matInput placeholder="Date debut" [(ngModel)]="contractToEdit.datedeb"  name="datedebut">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Date fin</mat-label>
+            <input matInput placeholder="Date fin" [(ngModel)]="contractToEdit.datefin" name="datefin">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Montant</mat-label>
+            <input matInput placeholder="Montant" [(ngModel)]="contractToEdit.montantContrat" name="montant">
+          </mat-form-field>
+
+          <mat-slide-toggle [(ngModel)]="contractToEdit.archive" name="archive">
+                Archive
+          </mat-slide-toggle>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="btn btn-secondary" mat-dialog-close>fermer</button>
+  <button mat-raised-button class="btn btn-success" (click)="editContract()">Enregistrer</button>
+</mat-dialog-actions>

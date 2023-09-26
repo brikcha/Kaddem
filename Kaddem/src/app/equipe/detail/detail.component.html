@@ -1,0 +1,13 @@
+
+    <div class="card card-plain" >
+        <div class="card-header card-header-danger">
+            <h4 class="card-title mt-0"> Detail {{detail.idDetailEquipe}}</h4>
+        </div>
+        <div class="card-body">
+            <h4>Salle: {{detail.salle}}</h4>
+            <h4>Thematique: {{detail.thematique}}</h4>
+            <a routerLink="/home/equipe/details/update/{{detail.idDetailEquipe}}" [ngClass]="['btn', 'btn-outline-warning']">Edit</a>
+            <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="notifyDeleteDetails()" style="float: right;"><i class="material-icons">delete</i></button>
+        </div>
+    </div>
+

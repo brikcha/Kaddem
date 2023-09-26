@@ -1,0 +1,18 @@
+
+    <div class="card card-plain" >
+        <div class="card-header card-header-danger">
+            <h4 class="card-title mt-0">{{equipe.nomEquipe}}</h4>
+        </div>
+        <img class="card-img-top" src="{{equipe.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h6 class="card-text" [ngStyle]="{'color':equipe.niveau === 'JUNIOR' ? 'green' : equipe.niveau === 'SENIOR'? 'orange' : 'red' }">{{equipe.niveau}}</h6>
+            <p class="card-text" *ngIf="equipe.detaileq != null">Salle : {{equipe.detaileq.salle}}</p>
+            <p class="card-text" *ngIf="equipe.detaileq != null">Thematic : {{equipe.detaileq.thematique}}</p>
+            <a routerLink="update/{{equipe.idEquipe}}" [ngClass]="['btn', 'btn-outline-warning']">Edit</a>
+            &nbsp;
+            <a routerLink="addDetails/{{equipe.idEquipe}}" [ngClass]="['btn', 'btn-primary']">add Details</a>
+            &nbsp;
+            <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="notifyDeleteEquipe()" style="float: right;"><i class="material-icons">delete</i></button>
+        </div>
+    </div>
+

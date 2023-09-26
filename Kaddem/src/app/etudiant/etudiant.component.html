@@ -1,0 +1,77 @@
+<!-- <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+       
+         
+
+            <form>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder=" Name" [(ngModel)]="etud.nomE"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="Prenom" [(ngModel)]="etud.prenomE"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+             
+                <br>
+                <button type="button" class="btn btn-success" (click)="addEtudiant(etud)">Add</button> 
+                <button type="button" class="btn btn-info" >Cancel</button>
+            </form>
+                
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title mt-0"> Listes des Etudiants</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>Prenom</th>
+                                    <th>Nom</th>
+                                     <th>Supprimer</th>
+                                     <th>modifier</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of listEtudiants'>
+                                
+                                        <td>{{p.prenomE}}</td>
+                                        <td>{{p.nomE}}</td>
+                                    
+                                   
+                                        <td><button  mat-raised-button class="btn btn-success"> 
+                                            <i class="material-icons" >edit</i></button> 
+                                      
+                                           
+                                          
+                                      
+                                <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="deleteEtudiant(p.idEtudiant)"><i class="material-icons">delete</i></button> 
+
+                                  
+                                                
+                                                  
+                                    
+          
+                                                  
+                                    
+                                    </tr>
+                                    
+                                
+                                           
+    
+                                    
+                                   
+                                   
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+   -->
